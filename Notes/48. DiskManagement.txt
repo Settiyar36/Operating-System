@@ -1,0 +1,12 @@
+3. Disk Management
+What is it?
+
+Disk management refers to the process of managing storage on your computer's hard disk or SSD. This includes organizing, partitioning, formatting, and ensuring the health of the disk.
+Key Concepts:
+
+Partitioning: Dividing the disk into separate parts (called partitions) so the operating system can manage them separately.
+Formatting: Making the disk ready for use by setting up a file system (e.g., NTFS, FAT32).
+Disk Health: Checking the status of the disk (e.g., disk errors, bad sectors) and managing space efficiently.
+Example:
+
+When you install a new hard drive, you need to partition and format it before you can use it for storing files. If the disk starts having errors, Disk Management tools in Windows can help fix them.

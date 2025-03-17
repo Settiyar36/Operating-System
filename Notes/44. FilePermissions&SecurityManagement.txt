@@ -1,0 +1,4 @@
+File Permissions: In Windows, you can set permissions for users and groups to control who can read, write, or execute a file.
+Permissions: Read, Write, Execute.
+Access Control Lists (ACLs): Used to define permissions for files and folders.
+Security Management: Windows provides tools like Windows Defender for virus protection, BitLocker for disk encryption, and User Account Control (UAC) to control administrative privileges.

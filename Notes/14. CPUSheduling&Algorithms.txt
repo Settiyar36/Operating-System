@@ -1,0 +1,105 @@
+CPU SCHEDULING:
+----------------------------
+
+    CPU scheduling is the process of deciding which process or task gets to use the CPU (Central Processing Unit) next.
+    Since a computer can only do one thing at a time on the CPU, the operating system must decide which process should
+     get CPU time, and for how long.
+
+Why is CPU Scheduling Important:
+-------------------------------------
+    Without scheduling, only one process would run at a time, and the system would be inefficient. 
+    By scheduling processes intelligently, the operating system can ensure that tasks are completed quickly and fairly,
+     and that the system doesn't remain idle.
+
+How Does CPU Scheduling Work?:
+------------------------------------
+    When multiple processes are ready to run, the OS picks the one that will execute next.
+    This decision is based on scheduling algorithms that follow certain rules or criteria 
+    (like minimizing waiting time, maximizing CPU usage, etc.).
+
+
+
+TYPES OF CPU SCHEDULING ALGORITHMS:
+------------------------------------------
+Two types:
+
+1. Preemptive Scheduling:
+-----------------------------------
+    In preemptive scheduling, the operating system can interrupt a running process and move it to the ready queue 
+    to give another process CPU time. This allows the OS to take control of the CPU whenever needed.
+
+    
+    ready   ------------------->  running
+            <------------------
+
+
+    A process may be paused before it finishes its execution to allow a higher-priority process or another process to run. 
+    This is done to ensure that important tasks or tasks that need quick responses are prioritized.
+
+    Example: If a process is running, but a higher-priority process arrives, the OS preempts the running process and 
+    allows the higher-priority one to execute immediately.
+
+    Pros:
+
+        Fairer to all processes because every process gets a chance to use the CPU.
+        More responsive to real-time or urgent tasks.
+    Cons:
+
+        Can lead to overhead due to frequent context switching (switching between processes).
+        Some processes may get starved (they don’t get enough CPU time).
+
+    Common Example of Preemptive Scheduling Algorithms:
+    ------------------------------------------------------
+        
+        Round Robin (RR)
+        Shortest Job Next (SJN) (if known in advance)
+        Priority Scheduling (preemptive version)
+
+
+2. Non-Preemptive Scheduling:
+----------------------------------------
+        In non-preemptive scheduling, once a process is running, it cannot be interrupted.
+         The operating system waits for the current process to finish its CPU time before moving on to the next process.
+
+
+         ready-------> running---------> terminated
+
+    How it works: When a process starts running, it runs until it completes or voluntarily gives up the CPU
+     (e.g., when it’s waiting for input/output). 
+     Only when the process finishes or is blocked does the OS switch to the next process.
+
+    Example: If a process is running and another process arrives with higher priority, the OS will not interrupt the
+     current process. The new process will have to wait until the current one finishes.
+
+    Pros:   
+        Less overhead since there are fewer context switches.
+        Simpler to implement, as no process can be interrupted.
+    Cons:
+        Less responsive since long-running processes can block others from executing.
+        Can cause poor performance if low-priority tasks take up too much time.
+
+
+    Common Example of Non-Preemptive Scheduling Algorithms:
+    ---------------------------------------------------------
+        First-Come, First-Served (FCFS)
+        Shortest Job First (SJF)
+        Priority Scheduling (non-preemptive version)
+
+        
+
+
+                              Scheduling Algorithms
+                                    |
+                            -------------------
+                           |                   |
+                      Preemptive           Non-Preemptive
+                           |                   |
+        ---------------------------------      -----------------------
+       |                                 |    |                     |
+  Shortest Remaining Time First   Round Robin  First-Come, First-Served
+          (SRTF)                         (RR)         (FCFS)           
+                                  |
+                          -----------------
+                         |                 |
+                   Priority Scheduling    Multilevel Queue
+                    (Preemptive)           Scheduling

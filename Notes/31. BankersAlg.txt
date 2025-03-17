@@ -1,0 +1,88 @@
+Banker's Algorithm (In Simple Terms)
+The Banker's Algorithm is a deadlock avoidance algorithm used by operating systems to allocate resources to processes while ensuring that the system will not enter a deadlock state. It is called "Banker's" because it works like a banker who has a limited amount of resources and needs to decide whether it is safe to approve a loan (i.e., allocate resources to a process).
+
+How the Banker's Algorithm Works:
+The algorithm ensures that the system remains in a safe state by checking if allocating resources to a process will keep the system safe from deadlock. It’s called a safe state if the system can allocate resources to processes without causing a cycle of waiting.
+
+Key Concepts:
+Process: Each process in the system requires some resources to complete its task.
+Resources: These are the things that processes need to complete their tasks, like CPU time, memory, printers, etc.
+Safe State: A state in which there is at least one sequence of processes that can finish without causing a deadlock.
+Unsafe State: A state where there is no such sequence, and deadlock might occur.
+Steps of the Banker's Algorithm:
+Input Required Information:
+
+Max: The maximum number of resources each process may need.
+Allocation: The number of resources currently allocated to each process.
+Available: The number of resources currently available in the system.
+Safety Check: The algorithm checks if it’s safe to allocate resources to a process by ensuring that after the allocation:
+
+The process can complete its execution (i.e., it can finish without waiting for more resources).
+Once the process finishes, it releases its resources, which can then be used by other processes.
+The algorithm uses the following steps to determine safety:
+
+Step 1: Determine if there is a process that can finish with the currently available resources. A process can finish if the number of available resources is greater than or equal to the maximum resources it needs.
+Step 2: If such a process is found, assume it finishes and release the resources it was holding back to the available pool.
+Step 3: Repeat this process until all processes can finish. If all processes can finish safely, the system is in a safe state. If not, it’s an unsafe state, and the request is denied.
+Example:
+Let’s say there are 3 processes (P0, P1, P2) and 3 types of resources (R1, R2, R3). The system has the following information:
+
+Max (Maximum resources needed by each process):
+
+makefile
+Copy
+P0: (7, 5, 3)
+P1: (3, 2, 2)
+P2: (9, 0, 2)
+Allocation (Resources currently allocated to each process):
+
+makefile
+Copy
+P0: (0, 1, 0)
+P1: (2, 1, 1)
+P2: (3, 2, 2)
+Available (Resources available in the system):
+
+scss
+Copy
+(3, 3, 2)
+Step-by-Step Process Using the Banker's Algorithm:
+Calculate the remaining needs for each process:
+
+makefile
+Copy
+Need = Max - Allocation
+P0: (7-0, 5-1, 3-0) = (7, 4, 3)
+P1: (3-2, 2-1, 2-1) = (1, 1, 1)
+P2: (9-3, 0-2, 2-2) = (6, -2, 0)
+Note: P2 has an invalid need (-2), which would immediately be rejected.
+
+Safety Check: We check if there is any process whose Need is less than or equal to Available:
+
+P1 has a Need of (1, 1, 1), and Available is (3, 3, 2). So, P1 can finish and release its resources.
+P0 has a Need of (7, 4, 3), but Available is (3, 3, 2), so P0 cannot finish yet.
+P2 has a Need of (6, -2, 0), which is not valid, so it is ignored.
+Resource Allocation:
+
+Once P1 finishes, it releases resources, so now Available becomes:
+scss
+Copy
+Available = (3, 3, 2) + (2, 1, 1) = (5, 4, 3)
+Now, P0 has a Need of (7, 4, 3), and Available is (5, 4, 3), so P0 can now finish and release its resources:
+scss
+Copy
+Available = (5, 4, 3) + (0, 1, 0) = (5, 5, 3)
+Now, all processes can finish, and the system is in a safe state.
+
+Advantages of Banker's Algorithm:
+Deadlock Avoidance: It ensures that the system never enters a deadlock state by carefully checking the safety before granting resources.
+Safe Resource Allocation: Helps the operating system decide whether a resource allocation should be granted.
+Disadvantages of Banker's Algorithm:
+Overhead: It requires frequent safety checks, which can be computationally expensive, especially in systems with many processes.
+Requires Knowledge of Maximum Need: The algorithm needs the maximum number of resources each process will ever need, which might not always be easy to determine in real-world systems.
+Not Scalable: It works best for systems with fewer processes and resources. It may not be practical for large-scale systems with a lot of resources.
+Summary:
+The Banker's Algorithm is a deadlock avoidance algorithm that checks if allocating resources to a process will leave the system in a safe state. It ensures that resources are allocated only if it guarantees that deadlock will not occur. It does so by evaluating if all processes can eventually finish without causing a cycle of waiting.
+
+
+

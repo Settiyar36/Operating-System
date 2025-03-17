@@ -1,0 +1,5 @@
+ Windows Services and Drivers
+Windows Services: Background processes that provide core functions to the system. They can run automatically when Windows starts.
+Examples: Print spooler, Windows Update service, network services.
+Drivers: Software that allows the operating system to communicate with hardware devices (like printers, graphics cards, network adapters).
+Example: A printer driver allows Windows to send print jobs to a physical printer.

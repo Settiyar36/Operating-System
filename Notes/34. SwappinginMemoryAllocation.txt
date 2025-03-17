@@ -1,0 +1,33 @@
+Swapping in Memory Allocation (In Simple Terms)
+Swapping is a memory management technique used in operating systems to manage the available main memory (RAM) more efficiently. It allows a process that is currently running in memory to be moved (or "swapped") out to secondary storage (usually a hard drive or SSD), freeing up space in RAM for other processes. Later, the process can be swapped back into memory when it needs to continue execution.
+
+How Swapping Works:
+Move Process Out of Memory:
+
+When the system is running low on available memory (RAM), and if there are processes that are not actively being used, the operating system can swap out a process from RAM and store it on disk (typically in a swap space or swap file).
+This is done so that the system can make room for other active processes.
+Bring Process Back into Memory:
+
+When the swapped-out process needs to continue executing (for example, when it's ready to perform another task), the operating system swaps it back from the disk into the available RAM.
+If necessary, another process may be swapped out to make space for the incoming process.
+Key Terms:
+Swapping in: Bringing a process from disk into memory.
+Swapping out: Moving a process from memory to disk.
+Why is Swapping Used?:
+Memory Shortage: When the system runs out of physical memory (RAM), swapping allows the operating system to continue running more processes than the physical memory can hold.
+Better Resource Management: It optimizes the use of available memory and prevents the system from crashing due to memory shortage.
+Example of Swapping:
+Let’s say there are 3 processes (P1, P2, P3) and only 2 GB of RAM available.
+
+Initially, P1 and P2 are loaded into RAM.
+When P3 needs to run but there isn’t enough space in RAM:
+The system can swap P1 out to disk (if it's not actively needed) and load P3 into RAM.
+When P1 is needed again, the system will swap P2 or P3 out to disk and bring P1 back into memory.
+Advantages of Swapping:
+More Processes in Memory: Allows running more processes than the system’s physical memory can hold by using secondary storage.
+Efficient Memory Usage: Helps in utilizing memory better when the system is overloaded with processes.
+System Stability: Prevents crashes due to lack of memory by swapping out inactive processes.
+Disadvantages of Swapping:
+Performance Overhead: Swapping can slow down the system because reading from and writing to disk is much slower than accessing RAM.
+Disk Space Usage: Swapping requires disk space, and if the system runs out of space on the disk, it can lead to issues.
+Increased Latency: There is a delay when swapping processes in and out of memory, leading to higher response times for users.

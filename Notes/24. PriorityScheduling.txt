@@ -1,0 +1,64 @@
+Priority Scheduling :
+---------------------------
+        it is a CPU scheduling algorithm that assigns a priority level to each process.
+         The process with the highest priority gets executed first, and if two processes have the same priority, 
+         they are executed based on their arrival order 
+         (typically with FCFS or Round Robin as a secondary rule).
+
+How it Works:
+------------------
+
+Priority Assignment:
+     Every process is assigned a priority, which can be a number or a ranking.
+      A lower number might represent a higher priority (depending on the system design). 
+    
+    For example:
+        Process P1 has priority 1 (highest priority).
+        Process P2 has priority 2 (lower priority than P1).
+        Scheduling: The scheduler will select the process with the highest priority for execution. If there are multiple processes with the same priority, a secondary rule (like FCFS) is used to break the tie.
+
+
+Preemptive or Non-Preemptive: Priority scheduling can be either:
+---------------------------------------------------------------------------
+
+Preemptive: 
+    If a new process with a higher priority arrives, it will preempt the currently running process.
+
+Non-preemptive: 
+    Once a process starts executing, it will run to completion before any other process with a higher priority is executed.
+
+Example:
+    Let’s say we have 3 processes:
+        P1 with priority 1
+        P2 with priority 2
+        P3 with priority 3
+
+If all processes arrive at the same time, P1 (the highest priority) will be executed first,
+ followed by P2, and then P3.
+
+
+If the scheduling is preemptive:
+------------------------------------
+If P1 is executing, and a new process P4 with a priority of 1 arrives, P4 will preempt P1 and run first.
+
+
+If the scheduling is non-preemptive:
+---------------------------------------
+    P1 will finish executing before P2 and P3, even if P4 arrives with a higher priority.
+
+    Pros:
+        Simple and intuitive.
+        Allows for high-priority processes to get more CPU time, which is useful for real-time systems.
+    
+    Cons:
+        Starvation: Low-priority processes may never get executed if higher-priority processes keep arriving.
+        Fairness: May lead to unfair CPU allocation, especially for low-priority processes.
+
+
+    Summary:
+        Priority Scheduling selects processes based on their priority. 
+        It can be preemptive or non-preemptive. While it's great for prioritizing important tasks, 
+        it can lead to starvation for lower-priority processes.
+
+
+

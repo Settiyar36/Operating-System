@@ -1,0 +1,101 @@
+RR SCHEDULING:
+----------------------------------------------------------------------------------
+
+Let's say we have 4 processes P1, P2, P3, P4, and they arrive at time 0.
+
+Process Info:
+------------------------------------------------------------------------------
+Arrival Time: All processes arrive at time 0.
+Burst Time (CPU time):
+P1: 5 units
+P2: 8 units
+P3: 3 units
+P4: 6 units
+Quantum Time: 4 units (This is the time slice each process gets in Round Robin scheduling.)
+
+    We are using Round Robin (RR) scheduling with a time quantum of 4 units.
+
+1. P1 starts at time 0 and runs for 4 units.
+2. After that, it goes back to the queue, and P2 runs for 4 units.
+3. The cycle continues with each process getting CPU time in a circular manner.
+
+
+Gantt Chart for Round Robin Scheduling:
+------------------------------------------------------
+Time	P1	P2	P3	P4	P1	P2	P3	P4	P1
+0	    4								
+4		    4							
+8			    3						
+11				    4					
+15					    1				
+16						    4			
+20							    2		
+22								    2	
+24									
+
+
+Explanation:
+--------------------
+    P1 runs for 4 units, then P2 runs for 4 units, and so on. This process continues until all processes have finished.
+    
+
+2. Completion Time (CT):
+--------------------------------------------------------
+The time at which each process completes execution.
+
+P1: Completes at time 24.
+P2: Completes at time 22.
+P3: Completes at time 20.
+P4: Completes at time 24.
+
+3. Turnaround Time (TAT):
+------------------------------------------------------
+Turnaround Time = Completion Time - Arrival Time.
+
+TAT of P1 = 24 - 0 = 24 units.
+TAT of P2 = 22 - 0 = 22 units.
+TAT of P3 = 20 - 0 = 20 units.
+TAT of P4 = 24 - 0 = 24 units.
+
+
+4. Waiting Time (WT):
+--------------------------------------------------------
+Waiting Time = Turnaround Time - Burst Time.
+
+WT of P1 = 24 - 5 = 19 units.
+WT of P2 = 22 - 8 = 14 units.
+WT of P3 = 20 - 3 = 17 units.
+WT of P4 = 24 - 6 = 18 units.
+
+
+5. Response Time (RT):
+------------------------------------------------------------
+Response Time = First Response Time - Arrival Time.
+
+RT of P1 = 0 (It starts immediately).
+RT of P2 = 4 (Starts after P1).
+RT of P3 = 8 (Starts after P2).
+RT of P4 = 11 (Starts after P3).
+
+
+GENERAL representation:
+---------------------------------------------
+
+Process 	Arrival Time    Burst Time  	Completion Time (CT)	Turnaround Time (TAT)	Waiting Time (WT)	Response Time (RT)
+P1	            0	             5	                24	                    24	                19	                    0
+P2	            0	             8	                22	                    22	                14	                    4
+P3	            0	             3	                20	                    20	                17	                    8
+P4	            0	             6	                24	                    24	                18	                    11
+
+
+
+Visual Gantt chart :
+---------------------------------------------------------------
+
+
+| Time | 0   | 4   | 8   | 12  | 16  | 20  | 24  |
+|------|-----|-----|-----|-----|-----|-----|-----|
+| P1   |-----|-----|-----|-----|-----|-----|     |
+| P2   |     |-----|-----|-----|-----|-----|     |
+| P3   |     |     |-----|-----|-----|     |     |
+| P4   |     |     |     |-----|-----|     |-----|

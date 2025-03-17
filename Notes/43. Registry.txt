@@ -1,0 +1,8 @@
+Windows Registry and Its Role
+Definition: The Windows Registry is a central database that stores configuration settings and options for Windows OS and installed programs.
+Key Information: Hardware settings, software configurations, user preferences, and system options.
+How to Work with Registry:
+Use the Registry Editor (regedit) to view and modify registry values.
+Common Registry Keys:
+HKEY_LOCAL_MACHINE: Hardware and system-wide settings.
+HKEY_CURRENT_USER: User-specific settings.

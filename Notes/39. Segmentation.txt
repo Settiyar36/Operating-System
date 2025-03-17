@@ -1,0 +1,6 @@
+4. Segmentation
+Definition: Segmentation is a memory management scheme that divides memory into variable-size segments based on the logical divisions of a program like code, data, and stack.
+Difference from Paging:
+Paging uses fixed-size blocks, while segmentation uses variable-size blocks (which are more closely tied to the structure of the program).
+Segmentation provides a logical view of memory, where each segment can grow or shrink independently.
+Example: A program may have separate segments for its code, data, and heap. If more memory is needed for the data segment, it can grow, unlike fixed-size paging.

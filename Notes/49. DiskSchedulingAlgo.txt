@@ -1,0 +1,38 @@
+ Disk Scheduling Algorithms
+What is it?
+
+Disk scheduling is the method used by the operating system to decide the order in which disk operations (such as read/write requests) are handled. Disk I/O (input/output) operations can be slow, and scheduling determines the most efficient way to access data.
+Common Disk Scheduling Algorithms:
+
+First-Come, First-Served (FCFS):
+
+Processes requests in the order they are received, regardless of their position on the disk.
+Pros: Simple to implement.
+Cons: Can lead to long wait times for some requests, especially if they are far from the current read/write head.
+Shortest Seek Time First (SSTF):
+
+Chooses the request closest to the current position of the disk arm (the head that reads and writes data).
+Pros: Reduces the overall seek time by handling the nearest requests first.
+Cons: Can lead to starvation (some requests might never get served if they are always farther away).
+SCAN (Elevator Algorithm):
+
+The disk arm moves in one direction and processes all the requests in that direction. Once it reaches the end, it reverses direction and processes the remaining requests.
+Pros: Reduces the likelihood of starvation compared to SSTF.
+Cons: Can result in uneven wait times if the requests are mostly on one side.
+C-SCAN (Circular SCAN):
+
+A variation of SCAN where, after reaching the end, the disk arm quickly returns to the beginning and starts processing requests again.
+Pros: Provides more consistent response times by always returning to the start.
+Cons: Still has some inefficiency when moving back to the start.
+LOOK:
+
+Similar to SCAN, but instead of going all the way to the end of the disk, it only moves as far as the last request in the current direction before reversing.
+Pros: More efficient than SCAN since it doesn’t waste time traveling to the end of the disk if no requests are there.
+Cons: Slightly more complex than FCFS.
+C-LOOK:
+
+Similar to C-SCAN, but it only goes as far as the last request in the direction before returning.
+Pros: More efficient than SCAN and LOOK, as it doesn’t move unnecessarily.
+Example:
+
+If there are multiple file read/write requests, disk scheduling algorithms decide the most efficient order for accessing the disk to minimize wait time and increase system performance.

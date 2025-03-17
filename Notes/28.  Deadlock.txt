@@ -1,0 +1,73 @@
+Deadlock
+--------------------
+    A deadlock is a situation in a computer system where two or more processes are unable to continue because they are 
+    each waiting for the other to release resources. 
+    This creates a circular wait that causes the processes to be stuck forever.
+
+Example of Deadlock:
+----------------------------
+Imagine two processes trying to use two resources:
+
+Process A has Resource 1 and needs Resource 2 to continue.
+Process B has Resource 2 and needs Resource 1 to continue.
+
+Both processes are waiting for each other to release the resources, but neither can proceed.
+ This situation is called a deadlock.
+
+
+Conditions for Deadlock:
+------------------------------
+For a deadlock to occur, all of these four conditions must be true:
+
+Mutual Exclusion:
+     At least one resource must be in a non-shareable mode. That is, only one process can use a resource at a time.
+
+Hold and Wait:
+     A process that is holding one resource is waiting to acquire additional resources that are currently being held by other processes.
+
+No Preemption:
+     Resources cannot be forcibly taken from a process; they must be released voluntarily.
+
+Circular Wait: 
+    There must be a closed chain of processes where each process is waiting for a resource held by the next process in the chain.
+
+
+How to Avoid Deadlock?
+-----------------------------------------
+There are several strategies to avoid deadlock:
+
+
+1. Deadlock Prevention:
+--------------------------
+    Prevent one of the four deadlock conditions from occurring. 
+    You can do this by:
+
+        Mutual Exclusion:
+             Can't be prevented in most cases because some resources (like printers) are inherently non-shareable.
+        Hold and Wait:
+             Prevent this by requiring that a process must request all resources it needs at once.
+              If a resource is unavailable, it must wait until all are available.
+        No Preemption:
+             If a process holds one resource and requests another, you could preempt the first resource from the process 
+             to prevent a deadlock.
+        Circular Wait: 
+            Prevent circular wait by imposing a resource ordering. 
+            For example, resources are assigned in a specific order (e.g., R1, R2, R3), and processes must request
+             resources in this order to avoid a circular wait.
+
+
+2. Deadlock Avoidance:
+------------------------
+    Dynamic analysis of process resource needs helps the system decide whether a process can be safely granted resources, 
+    avoiding potential deadlock.
+    
+    Banker's Algorithm: This is a classic algorithm that checks whether a process can proceed without risking deadlock by 
+    evaluating whether it can still run if it gets the requested resources.
+
+
+3. Deadlock Detection and Recovery:
+--------------------------------------------
+    Detection: The system allows deadlock to happen but periodically checks if any deadlock exists.
+    Recovery: If a deadlock is detected, recovery involves:
+    Terminating a process involved in the deadlock.
+    Rolling back processes to a safe state.

@@ -1,0 +1,110 @@
+Given Data:
+-------------------------------
+Arrival Time: All processes arrive at time 0.
+Burst Time:
+P1: 5 units
+P2: 8 units
+P3: 3 units
+P4: 6 units
+
+Steps for SJF:
+
+    In SJF, processes are executed based on their burst time. The process with the shortest burst time is executed first,
+     and if two processes have the same burst time, they are executed based on their order of arrival. 
+     Since all processes arrive at the same time in this case, we will pick the process with the shortest burst time first.
+
+Step-by-Step Execution (Gantt Chart):
+----------------------------------------------
+P3 has the shortest burst time (3 units), so it runs first.
+P1 has the next shortest burst time (5 units), so it runs second.
+P4 comes next with 6 units of burst time.
+P2 runs last because it has the longest burst time (8 units).
+
+Gantt Chart:
+---------------------------------
+
+Time       	0	      3	         8	          14	        22
+P3	       ------	------			
+P1		            ------	    ------		
+P4			                            	------	
+P2				                                          	------
+
+
+Completion Time (CT):
+-------------------------------
+P3: Completes at time 3.
+P1: Completes at time 8.
+P4: Completes at time 14.
+P2: Completes at time 22.
+
+
+Turnaround Time (TAT):
+-------------------------------------------
+Turnaround Time = Completion Time (CT) - Arrival Time.
+
+TAT of P3 = 3 - 0 = 3 units.
+TAT of P1 = 8 - 0 = 8 units.
+TAT of P4 = 14 - 0 = 14 units.
+TAT of P2 = 22 - 0 = 22 units.
+
+
+Waiting Time (WT):
+----------------------------------
+Waiting Time = Turnaround Time (TAT) - Burst Time.
+
+WT of P3 = 3 - 3 = 0 units.
+WT of P1 = 8 - 5 = 3 units.
+WT of P4 = 14 - 6 = 8 units.
+WT of P2 = 22 - 8 = 14 units.
+
+
+Response Time (RT):
+-----------------------------------
+Response Time = Time when the process first starts executing - Arrival Time.
+
+RT of P3 = 0 - 0 = 0 units.
+RT of P1 = 3 - 0 = 3 units.
+RT of P4 = 8 - 0 = 8 units.
+RT of P2 = 14 - 0 = 14 units.
+
+
+Summary Table:
+---------------------------------
+Process 	Arrival Time	Burst Time	Completion Time (CT)	Turnaround Time (TAT)	Waiting Time (WT)	Response Time (RT)
+P3          	0	            3	            3	                    3	                0	                    0
+P1          	0	            5	            8	                    8                  	3	                    3
+P4          	0	            6	            14	                    14              	8	                    8
+P2          	0	            8	            22	                    22	                14	                    14
+
+
+Key Metrics:
+---------------------------
+Average Turnaround Time (TAT) = (3 + 8 + 14 + 22) / 4 = 11.75 units
+Average Waiting Time (WT) = (0 + 3 + 8 + 14) / 4 = 6.25 units
+Average Response Time (RT) = (0 + 3 + 8 + 14) / 4 = 6.25 units
+
+
+Visual Gantt Chart Representation (for SJF):
+----------------------------------------------------
+
+
+| Time | 0   | 3   | 8   | 14  | 22  |
+|------|-----|-----|-----|-----|-----|
+| P3   |-----|     |     |     |     |
+| P1   |     |-----|-----|     |     |
+| P4   |     |     |     |-----|     |
+| P2   |     |     |     |     |-----|
+
+
+P3 runs first because it has the shortest burst time of 3 units.
+P1 runs second, with a burst time of 5 units.
+P4 runs next, with a burst time of 6 units.
+P2 runs last because it has the longest burst time of 8 units.
+
+
+Conclusion:
+-------------------------
+In Shortest Job First (SJF) scheduling, the process with the shortest burst time is selected first.
+This algorithm minimizes waiting time but can lead to starvation for longer processes.
+P3 has the shortest turnaround and waiting times in this example, while P2 has the highest waiting 
+and turnaround times due to its long burst time.

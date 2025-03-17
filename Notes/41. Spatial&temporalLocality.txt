@@ -1,0 +1,7 @@
+ Spatial and Temporal Locality
+Spatial Locality: Refers to the tendency of programs to access nearby memory locations within a short period.
+Example: If a program accesses one memory address, it's likely to access adjacent addresses soon.
+Importance: Helps in optimizing caching and paging algorithms.
+Temporal Locality: Refers to the tendency of programs to access the same memory locations repeatedly over a short period.
+Example: A variable that is accessed multiple times in quick succession.
+Importance: Optimizes caching strategies by keeping recently accessed data in fast memory.

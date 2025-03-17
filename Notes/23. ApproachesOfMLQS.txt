@@ -1,0 +1,84 @@
+APPROACHES OF MULTI LEVEL QUEUE SCHEDULING:
+---------------------------------------------------
+
+    In Multilevel Queue Scheduling, there are two primary approaches to how processes are handled and executed based 
+    on their priority or type of work. 
+    These are:
+
+
+1. Fixed Priority Multilevel Queue Scheduling (Non-preemptive):
+-----------------------------------------------------------------
+    In this approach, each process is permanently assigned to one specific queue based on its characteristics 
+    (e.g., interactive, background, batch). 
+    Once a process is assigned to a queue, it remains in that queue for its entire execution.
+
+Key Characteristics:
+
+    Process Classification: Each process is classified into a specific queue when it arrives 
+    (e.g., high-priority for interactive tasks, low-priority for batch tasks).
+    
+    Queue Priorities: The queues themselves have priorities.
+     The scheduler always picks a process from the highest priority queue that has processes ready to execute.
+
+    No Preemption: Once a process starts executing, it will continue to execute until it finishes 
+    (i.e., no preemption between queues).
+
+Example:
+
+    Queue 1 (High Priority): Interactive processes (e.g., typing, mouse clicks).
+    Queue 2 (Medium Priority): Batch processes (e.g., file processing).
+    Queue 3 (Low Priority): Background processes (e.g., antivirus scans).
+
+The System will:
+    Execute processes from Queue 1 first (interactive).
+    If Queue 1 is empty, it will execute processes from Queue 2 (batch).
+    If Queue 2 is empty, it will then execute from Queue 3 (background processes).
+
+
+Fixed Priority Preemptive Method:
+-------------------------------------------
+    How it works: Each queue is assigned a fixed priority. 
+    The processes in the highest-priority queue are executed first, and if a process from a higher-priority queue arrives, 
+    it can preempt (interrupt) the execution of a process from a lower-priority queue.
+
+    Preemption:
+         This is preemptive, meaning that if a process from a higher-priority queue arrives while a process 
+         from a lower-priority queue is executing, the higher-priority process will take over and preempt the lower-priority one.
+
+    Example:
+         If you have a high-priority queue for system processes and a lower-priority queue for batch jobs, 
+         a system process will interrupt the execution of the batch process if both are ready at the same time.
+
+
+2. Time Slicing (Round Robin)
+----------------------------------------
+    How it works:
+         This method uses time slices (also called quantum) for each queue. 
+        When a process is executed, it is given a small time slice to run, and if it doesn’t finish within that time, 
+        it is preempted and placed back in the queue to wait for its next turn.
+
+Time-sharing within queues: 
+    Each queue can use Round Robin or similar algorithms to allocate a specific time slice to each process 
+        within that queue. 
+        After the time slice expires, the process moves to the back of the queue and waits for the CPU again.
+
+    Example: A process in a high-priority interactive queue might be given a small time slice,
+     and after its time is up, it’s preempted, and another process in the same queue gets its turn. 
+     If it doesn’t finish, it goes to the back of the line.
+
+
+
+                           Multilevel Queue Scheduling
+                                  |
+                            --------------------
+                           |                    |
+            Fixed Priority Preemptive         Time Slicing (Round Robin)
+                     Method                        Method
+                           |                             |
+            -------------------------          --------------------------
+           |                         |        |                        |
+   High Priority Queue      Low Priority Queue  Time Slice for each Queue    |
+           |                         |                              |         |
+   Execute High Priority     Execute Low Priority                Round Robin  |
+           |                             |                           for each Queue   |
+       Preemptive Execution         Preemptive Execution           Time Quantum         |

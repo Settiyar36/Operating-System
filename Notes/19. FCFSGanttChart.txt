@@ -1,0 +1,112 @@
+Given Data:
+------------------------------
+We have 4 processes: P1, P2, P3, P4.
+All processes arrive at time 0.
+Burst Time (CPU time):
+P1: 5 units
+P2: 8 units
+P3: 3 units
+P4: 6 units
+The arrival time for all processes is 0 (simultaneous arrival).
+
+Steps for FCFS:
+-------------------------------
+In FCFS, the process that arrives first is executed first, and it runs to completion without being interrupted.
+
+Gantt Chart:
+------------------------------
+The processes execute in the order of their arrival, so:
+
+P1 runs first from 0 to 5.
+P2 runs next from 5 to 13 (after P1).
+P3 runs next from 13 to 16 (after P2).
+P4 runs last from 16 to 22 (after P3).
+Here’s the Gantt Chart for FCFS:
+
+
+Time	0	          5	         13	        16	        22
+P1	    ------  	------			
+P2		            ------	    ------		
+P3			                    ------		
+P4				                           ------   	------
+
+
+Completion Time (CT):
+----------------------------------
+P1: Completes at time 5.
+P2: Completes at time 13.
+P3: Completes at time 16.
+P4: Completes at time 22.
+
+
+Turnaround Time (TAT):
+-------------------------------
+
+Turnaround Time = Completion Time (CT) - Arrival Time.
+
+TAT of P1 = 5 - 0 = 5 units.
+TAT of P2 = 13 - 0 = 13 units.
+TAT of P3 = 16 - 0 = 16 units.
+TAT of P4 = 22 - 0 = 22 units.
+
+
+Waiting Time (WT):
+-----------------------------
+Waiting Time = Turnaround Time (TAT) - Burst Time.
+
+WT of P1 = 5 - 5 = 0 units.
+WT of P2 = 13 - 8 = 5 units.
+WT of P3 = 16 - 3 = 13 units.
+WT of P4 = 22 - 6 = 16 units.
+
+
+Response Time (RT):
+----------------------------
+Response Time = Time when the process first starts executing - Arrival Time.
+
+RT of P1 = 0 - 0 = 0 units.
+RT of P2 = 5 - 0 = 5 units.
+RT of P3 = 13 - 0 = 13 units.
+RT of P4 = 16 - 0 = 16 units.
+
+
+Summary Table:
+----------------------------
+Process     	Arrival Time	Burst Time	Completion Time (CT)	Turnaround Time (TAT)	Waiting Time (WT)	Response Time (RT)
+P1              	0	            5	        5	                        5               	0	                    0
+P2	                0	            8	        13                      	13              	5	                    5
+P3	                0	            3	        16	                        16              	13	                    13
+P4              	0	            6	        22	                        22                 	16	                    16
+
+
+Key Metrics:
+---------------------
+Average Turnaround Time (TAT) = (5 + 13 + 16 + 22) / 4 = 14 units
+Average Waiting Time (WT) = (0 + 5 + 13 + 16) / 4 = 8.5 units
+Average Response Time (RT) = (0 + 5 + 13 + 16) / 4 = 8.5 units
+
+
+Visual Gantt Chart Representation (for FCFS):
+---------------------------------------------------------------
+
+
+| Time | 0   | 5   | 13  | 16  | 22  |
+|------|-----|-----|-----|-----|-----|
+| P1   |-----|-----|     |     |     |
+| P2   |     |-----|-----|     |     |
+| P3   |     |     |-----|     |     |
+| P4   |     |     |     |-----|-----|
+
+
+P1 starts at time 0 and runs for 5 units.
+P2 starts at time 5 and runs for 8 units.
+P3 starts at time 13 and runs for 3 units.
+P4 starts at time 16 and runs for 6 units.
+
+
+Conclusion:
+----------------------------------
+
+In FCFS, processes are executed in the order of their arrival time.
+The waiting time is higher for processes that arrive later, as they need to wait for the previous processes to finish.
+The turnaround time is simply the total time from arrival to completion for each process.

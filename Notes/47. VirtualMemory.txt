@@ -1,0 +1,9 @@
+What is it?
+
+Virtual memory is a technique that allows the OS to use hard disk space as an extension of RAM. It gives the illusion that your computer has more RAM than it physically does.
+Why do we need it?
+
+When the RAM is full, the OS temporarily moves data that isn't actively being used to a space on the hard disk (or SSD) called the swap file or page file. This allows the system to run more processes than it could fit in RAM alone.
+Example:
+
+When you're running multiple applications at once (like a browser, text editor, etc.), and your physical RAM is full, the OS uses virtual memory to store parts of the apps' data on your hard disk so the apps keep running.
