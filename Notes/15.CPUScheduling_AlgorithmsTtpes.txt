@@ -1,0 +1,57 @@
+Types of CPU Scheduling Algorithms:
+------------------------------------------
+Here are the main CPU scheduling algorithms:
+
+
+1. First-Come, First-Served (FCFS):
+----------------------------------------
+    How it works: The first process to arrive gets the CPU first, then the next one, and so on.
+     It’s like waiting in line at a store—whoever gets there first is served first.
+
+    Pros: Simple and easy to understand.
+
+    Cons: Can cause long waiting times, especially if a process takes a long time (called the convoy effect).
+
+
+2. Shortest Job Next (SJN) or Shortest Job First (SJF):
+----------------------------------------------------------
+    How it works: The process that requires the least amount of CPU time (or burst time) is given the CPU first. 
+    It's like choosing to do the easiest or quickest task first to get it out of the way.
+
+    Pros: Can minimize average waiting time.
+
+    Cons: Difficult to predict how long a process will take, and it may cause starvation (longer processes keep getting delayed).
+
+
+3. Round Robin (RR):
+-------------------------------
+    How it works: Each process gets a fixed amount of CPU time (called a time slice or quantum).
+    Once a process uses its time slice, it’s moved to the back of the queue, and the next process gets its turn.
+    It’s like taking turns playing a game in a group.
+
+    Pros: Fair and ensures no process is starved.
+
+    Cons: If the time slice is too large, it behaves like FCFS, and if it’s too small, it may cause too many context switches 
+    (overhead).
+
+
+4. Priority Scheduling:
+-------------------------------
+    How it works: Each process is assigned a priority, and the process with the highest priority gets the CPU first. 
+    If two processes have the same priority, the system might use FCFS or another rule to decide which one gets the CPU.
+
+    Pros: Useful when some tasks are more important than others.
+
+    Cons: Lower-priority processes may starve (never get executed).
+
+
+5. Multilevel Queue Scheduling:
+------------------------------------
+    How it works: Processes are divided into different queues, based on their priority or type
+     (e.g., interactive processes vs. batch processes). 
+     Each queue has its own scheduling algorithm (like FCFS or RR), and processes are served based on their queue's rules.
+
+    Pros: Helps separate different types of processes and handle them efficiently.
+
+    Cons: Complex and may cause issues if processes need to switch between queues.
+

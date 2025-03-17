@@ -1,0 +1,6 @@
+ Virtual Machine (VM)
+Definition: A virtual machine is a software-based simulation of a physical computer, allowing you to run multiple operating systems (OS) on a single physical machine. VMs enable isolation, meaning processes in one VM don't affect others.
+Key Points:
+Hypervisor: A piece of software that manages and runs VMs. It can be Type 1 (bare-metal, runs directly on hardware) or Type 2 (hosted, runs on an OS).
+Benefits: VMs are used for testing, development, and running applications in isolated environments without affecting the host system.
+Example: Running Windows on a Mac, or running Linux on a Windows machine via software like VMware or VirtualBox.

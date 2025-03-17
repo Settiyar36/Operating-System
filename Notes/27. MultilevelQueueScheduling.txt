@@ -1,0 +1,64 @@
+Multilevel Feedback Queue Scheduling (MLFQ):
+--------------------------------------------------------
+    Multilevel Feedback Queue Scheduling (MLFQ) is a CPU scheduling algorithm used in operating systems to manage
+     processes by giving each one a priority and dynamically adjusting that priority based on the process’s behavior.
+
+
+How MLFQ Works (In Simple Terms):
+
+Multiple Queues with Different Priorities:
+    There are several queues, each with a different priority level.
+    Processes are initially placed in the highest-priority queue.
+    The highest-priority queue gets the CPU time first, followed by the next lower priority queue, and so on.
+
+Feedback Mechanism:
+-------------------
+    Feedback means the system can move processes between queues based on their behavior
+     (how long they run or how CPU-intensive they are).
+    If a process uses too much CPU time (becoming CPU-bound), it may be moved to a lower-priority queue.
+    If a process doesn’t use much CPU time and behaves more interactively (I/O-bound), 
+    it can be moved to a higher-priority queue.
+
+Time Slices (Time Quanta):
+------------------------------
+    Each queue may use time slicing (round robin) to give each process a small, fixed amount of CPU time (time quantum).
+    Lower-priority queues typically give processes larger time slices since they are expected to be more CPU-intensive.
+
+Steps in MLFQ:
+-------------------
+    First, processes are added to the highest-priority queue.
+    If a process doesn’t finish within its time slice, it is moved to a lower-priority queue.
+    If a process finishes quickly (used less CPU time), it might be moved to a higher-priority queue for more immediate attention.
+    Higher-priority queues are always given preference for CPU time.
+
+Advantages of MLFQ:
+----------------------
+    Dynamic Adaptability:
+        MLFQ adjusts the priority of processes dynamically based on their behavior.
+         If a process needs more CPU time, it will be moved to a lower-priority queue.
+          If it uses less CPU and is I/O-bound, it gets higher priority.
+
+    Improved Response Time for Interactive Processes:
+        Interactive processes (e.g., user inputs in a GUI) are typically placed in higher-priority queues 
+        and get more immediate CPU time, improving responsiveness.
+
+    Fairness:
+        MLFQ helps to ensure that CPU-bound processes don't starve interactive processes (or vice versa) by 
+        adjusting priorities dynamically.
+
+    Efficient CPU Utilization:
+        CPU-bound processes are given more CPU time, while I/O-bound processes are efficiently handled in the 
+        higher-priority queues, leading to better CPU utilization and quicker responses.
+
+    Prevent Starvation:
+        MLFQ tries to prevent starvation of low-priority processes. 
+        If a process stays in a lower-priority queue for too long, the system can move it to a higher-priority 
+        queue (based on certain conditions).
+
+    Example:
+        Imagine a print job (CPU-bound) and an interactive user input (I/O-bound).
+
+        The print job starts in the high-priority queue. 
+        If it doesn’t finish quickly, it gets moved to a lower-priority queue (since it’s CPU-bound).
+        The interactive user input (like typing in a word processor) is moved to the higher-priority queue to ensure it gets
+        immediate attention from the CPU, making the user experience smoother.

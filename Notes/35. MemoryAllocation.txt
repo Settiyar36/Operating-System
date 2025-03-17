@@ -1,0 +1,58 @@
+Memory Allocation (In Simple Terms)
+Memory allocation is the process of assigning blocks of memory to programs (or processes) while they are running. The operating system (OS) is responsible for managing and allocating memory to ensure that each process has enough space to execute without interfering with others.
+
+Types of Memory Allocation:
+Static Memory Allocation:
+
+Definition: Memory is allocated before the program starts running, and the size is fixed throughout the execution.
+Example: A variable in a program that is declared with a fixed size (like an array with a predefined number of elements).
+When Used: In simpler programs or embedded systems where the memory needs are predictable and fixed.
+Dynamic Memory Allocation:
+
+Definition: Memory is allocated during the execution of the program, allowing for flexibility. The program can request more memory if needed and release memory when no longer required.
+Example: Using functions like malloc() in C or new in C++ to allocate memory for variables during the program's runtime.
+When Used: In applications where the memory requirements are not fixed and may change during execution (e.g., in web browsers, video games, or complex software).
+How Memory Allocation Works:
+For Static Allocation:
+The memory required for variables, arrays, etc., is reserved at the compile-time.
+The size and type of the memory are known ahead of time.
+For Dynamic Allocation:
+The program can ask for more memory from the OS while it is running, and the OS assigns an available chunk of memory.
+Once the memory is no longer needed, the program can free it, allowing the OS to reuse the memory for other tasks.
+Memory Allocation Strategies:
+Contiguous Allocation:
+Definition: Memory is allocated in a single continuous block for each process.
+Pros: Simple and fast for accessing data.
+Cons: Can cause fragmentation (unused memory space between blocks), making it difficult to find enough free memory as the system runs.
+Non-contiguous Allocation:
+Definition: Memory is allocated in separate chunks, not necessarily next to each other. The system can place processes in any available part of memory.
+Example: Paging and Segmentation are types of non-contiguous allocation.
+Pros: Solves fragmentation issues and allows better memory utilization.
+Cons: Slightly slower due to the need to manage multiple memory chunks.
+Example of Dynamic Memory Allocation:
+Imagine you're running a program where you need to store user data. At the start of the program, you don’t know how many users there will be.
+
+Step 1: The program asks the OS for a block of memory to store data.
+Step 2: As new users sign up, the program requests more memory from the OS to store each user's data.
+Step 3: When the data is no longer needed (for example, when a user logs out), the program releases memory back to the OS.
+Memory Allocation in Action (Simplified):
+Static Allocation:
+Program declares a fixed-size array: int arr[10]; (10 integer elements).
+The OS allocates exactly 10 spots in memory for the array.
+Dynamic Allocation:
+Program requests memory for a list of unknown size: int* arr = malloc(sizeof(int) * numElements);
+The OS allocates enough memory for the number of integers the program requests.
+After usage, the program frees the memory: free(arr);
+Advantages and Disadvantages:
+Advantages of Static Memory Allocation:
+Fast: Memory is allocated once and stays fixed, so there is no need for constant reallocation.
+Simpler: Easier to manage because the memory requirements are predictable.
+Disadvantages of Static Memory Allocation:
+Inflexible: Once memory is allocated, it cannot change.
+Wasted Space: If you don't use all the allocated memory, it's wasted.
+Advantages of Dynamic Memory Allocation:
+Flexible: You can request more memory when needed and release memory when done.
+Efficient: No wasted space since the memory allocated matches the program's needs.
+Disadvantages of Dynamic Memory Allocation:
+Slower: Allocating and deallocating memory can add overhead.
+Fragmentation: If memory is allocated and freed frequently, it can become fragmented, leading to inefficient memory use.

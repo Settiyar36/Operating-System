@@ -1,0 +1,129 @@
+Multilevel Queue Scheduling :
+----------------------------------------
+    It is a scheduling algorithm where processes are divided into multiple queues based on certain properties
+    (like priority or type of process).
+    Each queue has its own scheduling algorithm, and the scheduler selects processes from these queues based on their priority.
+
+
+Multilevel Queue Scheduling with Process Types:
+--------------------------------------------------
+    In Multilevel Queue Scheduling, the processes are categorized into different queues based on their type.
+     These types typically include:
+
+        1. System Processes (High Priority)
+        2. Interactive Processes (User-initiated, e.g., typing, mouse clicks)
+        3. Batch Processes (Background tasks that don't require user interaction, e.g., file sorting)
+        4. Student Processes (Typically educational or non-urgent tasks like simple computations or simulations)
+
+    Each of these types of processes is placed in a specific queue according to its priority or processing behavior.
+
+
+Process Type	             Queue Type	                            Scheduling Algorithm
+------------------------------------------------------------------------------------------------------------------
+System Processes	        High Priority Queue	                    Round Robin or FCFS
+
+Interactive Processes	    High Priority or Medium Queue	         Round Robin or FCFS
+
+Student Processes	        Medium Priority Queue                  	Round Robin or FCFS
+
+Batch Processes	            Low Priority Queue	                   FCFS or Shortest Job First (SJF)
+
+
+
+How it Works:
+----------------------------
+
+Multiple Queues:
+-----------------
+    The system has multiple queues, and each queue is for a different type of process.
+    For example:
+        High-priority queue for interactive processes (like user input, real-time tasks).
+        Low-priority queue for batch processes (like background tasks that don’t need to be immediate).
+
+
+Queue Classification:
+------------------------
+    Processes are classified into one of the queues based on their priority or type. 
+    For example:
+        Short, interactive tasks go to the high-priority queue.
+        Longer, batch tasks go to the low-priority queue.
+
+
+Different Scheduling in Each Queue:
+----------------------------------------
+    Each queue can use a different scheduling algorithm. 
+    For example:
+        The high-priority queue could use Round Robin or FCFS (First-Come, First-Served) to handle quick, interactive tasks.
+        The low-priority queue might use FCFS or Shortest Job First (SJF) to process long, background tasks.
+
+
+Queue Selection:
+-----------------------
+    The scheduler always picks processes from the highest priority queue first.
+     If the high-priority queue has no processes, it will move to the next lower-priority queue, and so on.
+
+
+No Preemption (Typically):
+----------------------------------
+    Once a process starts executing, it generally isn’t interrupted by another process from a lower-priority queue.
+    But the system can select a process from the highest-priority queue if needed.
+    Example to Make It Clear:
+        Imagine you have 3 queues:
+
+    High Priority Queue: For interactive processes (like typing on a keyboard or a mouse click).
+    Medium Priority Queue: For batch processing (like file processing).
+    Low Priority Queue: For background processes (like running antivirus scans).
+
+
+Step-by-Step Execution:
+---------------------------
+Queue 1 (High Priority) has an interactive task (Process A). Process A gets executed first.
+Once Process A completes, Queue 2 (Medium Priority) will be checked, and Process B (a batch task) will be executed next.
+If Queue 2 is empty, the system checks Queue 3 (Low Priority) and executes Process C (a background task).
+
+
+Visual Representation:
+------------------------
+
+
+      Multilevel Queue Scheduling
+             |
+    -------------------------
+    |                       |
+High Priority           Low Priority
+(Interactive)             (Background)
+    |                       |
+   FCFS                  FCFS or SJF
+
+
+Advantages:
+---------------------
+Efficiency: It efficiently organizes processes based on their type and priority.
+Simple: Easy to understand and implement.
+
+
+Disadvantages:
+---------------------------
+Starvation: Low-priority processes can sometimes never get executed if high-priority queues are always full.
+Rigidity: Once a process is assigned to a queue, it typically stays there, even if its behavior changes over time.
+
+
+
+Summary of Process Types in Multilevel Queue Scheduling:
+------------------------------------------------------------
+
+
+
+
+Process Type	            Queue	                        Priority	                                    Examples
+---------------------------------------------------------------------------------------------------------------------------------
+System Processes	        High Priority	                Highest Priority	                System updates, real-time tasks
+
+Interactive Processes	   High or Medium Priority	            High to Medium	                     User input (keyboard, mouse),
+                                                                                                        real-time applications
+
+Student Processes	        Medium Priority	                    Medium	                          Non-urgent tasks like simulations, 
+                                                                                                            student projects
+
+Batch Processes	            Low Priority	                   Lowest Priority	                    Printing jobs, long-duration 
+                                                                                                        background tasks

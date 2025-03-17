@@ -1,0 +1,88 @@
+SYSTEM CALL:
+-------------------------------
+    A system call is a programmatic way in which a program (usually an application or user-level program) interacts with the operating system (OS).
+     Essentially, a system call is an interface between a running program and the OS kernel. 
+     When an application needs to perform operations that require OS-level access (such as I/O, process control, or memory management), 
+     it makes a system call.
+
+    Key Points about System Calls:
+        Purpose:  System calls allow user-level programs to request services from the OS kernel. 
+        These services can include things like opening files, creating processes, or managing system resources.
+
+        Mode of Operation: When a system call is made, the program's execution mode switches from user mode (where the application runs) 
+        to kernel mode (where the OS operates).
+         This switch is necessary because the OS has access to critical resources, while user programs do not.
+
+    Examples of System Calls:
+        These are common categories and examples of system calls:
+
+    1. Process Control:
+
+        fork() – Creates a new process.
+        exec() – Loads a new program into the current process.
+        exit() – Terminates the process.
+    
+    2. File Management:
+
+        open() – Opens a file.
+        read() – Reads data from a file.
+        write() – Writes data to a file.
+        close() – Closes a file.
+
+    3. Memory Management:
+    
+        malloc() – Allocates memory.
+        free() – Frees previously allocated memory.
+
+    4. Device Management:
+
+         ioctl() – Configures a device.
+         read() – Reads data from a device.
+         write() – Writes data to a device.
+
+    5. Information Maintenance:
+
+        getpid() – Retrieves the process ID of the current process.
+        sleep() – Pauses the execution of a program for a specified duration.
+
+    6. Communication:
+
+        pipe() – Creates a communication channel between processes.
+        socket() – Creates a communication endpoint (network communication).
+
+    How System Calls Work:
+        Application Requests Service:
+            A program makes a system call by invoking a library function that is designed to interact with the OS.
+
+        Mode Switch (User to Kernel):
+            The CPU switches from user mode to kernel mode to allow the OS to handle the system call.
+
+        OS Handles Request:
+            The OS kernel processes the system call, carries out the requested operation 
+            (e.g., reading from a file, creating a process), and may interact with hardware or resources.
+
+        Return to User Mode:
+            Once the OS has completed the task, control returns to the application, and the CPU switches back to user mode.
+
+    Types of System Calls:
+        System calls can be categorized into different types based on their functionality:
+
+    1. Process Control:
+        Manages processes (creation, scheduling, termination, etc.).
+            Example: fork(), exit(), wait()
+
+    2. File Management:
+        Deals with files and directories (open, read, write, close, etc.).
+            Example: open(), read(), write(), close()
+
+    3. Device Management:
+        Handles communication with hardware devices (e.g., printers, disks).
+            Example: ioctl(), read(), write()
+
+    4. Information Maintenance:
+        Retrieves or manipulates system information (e.g., process ID, system uptime).
+            Example: getpid(), sleep(), gettimeofday()
+
+    5. Communication:  
+        Manages communication between processes (e.g., inter-process communication, networking).
+            Example: pipe(), socket(), send(), recv()

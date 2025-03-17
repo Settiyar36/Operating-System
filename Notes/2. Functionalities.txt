@@ -1,0 +1,42 @@
+FUNCTIONALITIES OF OS:
+------------------------
+1. Process Management
+2. memory Management
+3. Storage Management
+4. File Management
+5. I/O System Management
+6. Security
+
+1. Process Management:
+-----------------------
+    A process under execution is called Process Management.
+     OS keeps a track of all the processes. OS decides the order of execution of the processes.
+     It decides how much time a process takes to complete and this is performed by Process scheduling.
+
+
+2. memory Management:
+----------------------
+    The OS controls the primary memory. 
+    It allocates the memory to a process when the process requests it and deallocates the memory when the process has terminated. 
+
+3. Storage Management:
+-------------------------
+    It is used to store the data permanently in hard disk. 
+    It is used for management of storage. Hard disk is a non-volatile memory. 
+
+4. File management:
+-----------------------
+    Collection of related info. OS carries out the following file management activities. 
+    It keeps a track of where info is stored, user access settings and status of every file. 
+
+5. I/O System Management:
+----------------------------
+    An OS manages the device Communication via device drivers. 
+    It keep track of all devices connected to the system.
+    It decides which process gets access to a certain device and how long.
+
+
+6. Security:
+-------------------
+    Privacy also provided by OS that means passwords, so that unauthorized applications cant access programs or data. 
+    

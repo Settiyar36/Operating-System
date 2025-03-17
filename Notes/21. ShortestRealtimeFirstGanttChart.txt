@@ -1,0 +1,116 @@
+Shortest Remaining Time First (SRTF):
+    SRTF is a preemptive version of the Shortest Job First (SJF) algorithm. '
+    In SRTF, the process with the shortest remaining burst time is executed first. 
+    If a new process arrives with a shorter remaining burst time, it preempts the currently running process 
+    and starts executing instead.
+    This algorithm can result in preemption, meaning a process that is currently running can be interrupted and later resumed.
+
+
+Given Data:
+--------------------------------
+Arrival Time: All processes arrive at time 0.
+Burst Time:
+P1: 5 units
+P2: 8 units
+P3: 3 units
+P4: 6 units
+
+Quantum Time:
+     Since SRTF is preemptive, we do not require a fixed quantum time; the process with the shortest remaining burst time is always selected.
+
+Step-by-Step Execution (Gantt Chart):
+-------------------------------------------------
+Initially, all processes arrive at time 0.
+At time 0, P3 has the shortest burst time of 3 units, so it starts first.
+After P3 finishes, P1 has the shortest remaining burst time of 5 units, so it runs next.
+Next, P4 runs because it has the shortest remaining burst time of 6 units.
+Finally, P2 runs last with 8 units of burst time.
+
+Here’s the Gantt Chart:
+---------------------------------
+
+
+Time	0	3	5	8	14	20	22
+P3	------	------					
+P1			------	------			
+P4					------	------	
+P2							------
+
+
+Completion Time (CT):
+-----------------------------------
+P3: Completes at time 3.
+P1: Completes at time 8.
+P4: Completes at time 14.
+P2: Completes at time 22.
+
+
+Turnaround Time (TAT):
+----------------------------------
+Turnaround Time = Completion Time (CT) - Arrival Time.
+
+TAT of P3 = 3 - 0 = 3 units.
+TAT of P1 = 8 - 0 = 8 units.
+TAT of P4 = 14 - 0 = 14 units.
+TAT of P2 = 22 - 0 = 22 units.
+
+
+Waiting Time (WT):
+-----------------------------------------------
+Waiting Time = Turnaround Time (TAT) - Burst Time.
+
+WT of P3 = 3 - 3 = 0 units.
+WT of P1 = 8 - 5 = 3 units.
+WT of P4 = 14 - 6 = 8 units.
+WT of P2 = 22 - 8 = 14 units.
+
+
+Response Time (RT):
+--------------------------------------------
+Response Time = Time when the process first starts executing - Arrival Time.
+
+RT of P3 = 0 - 0 = 0 units.
+RT of P1 = 3 - 0 = 3 units.
+RT of P4 = 8 - 0 = 8 units.
+RT of P2 = 14 - 0 = 14 units.
+
+
+Summary Table:
+-------------------------------------
+Process	        Arrival Time	Burst Time	Completion Time (CT)	Turnaround Time (TAT)	Waiting Time (WT)	Response Time (RT)
+P3	                0           	3	        3	                        3	                   0	                0
+P1	                0           	5	        8	                        8	                   3	                3
+P4	                0           	6	        14	                        14	                   8	                8
+P2	                0              	8	        22	                        22	                   14	                14
+
+
+Key Metrics:
+------------------------------------
+Average Turnaround Time (TAT) = (3 + 8 + 14 + 22) / 4 = 11.75 units
+Average Waiting Time (WT) = (0 + 3 + 8 + 14) / 4 = 6.25 units
+Average Response Time (RT) = (0 + 3 + 8 + 14) / 4 = 6.25 units
+
+
+Visual Gantt Chart Representation (for SRTF):
+------------------------------------------------
+
+
+| Time | 0   | 3   | 5   | 8   | 14  | 20  | 22  |
+|------|-----|-----|-----|-----|-----|-----|-----|
+| P3   |-----|     |     |     |     |     |     |
+| P1   |     |     |-----|-----|     |     |     |
+| P4   |     |     |     |     |-----|-----|     |
+| P2   |     |     |     |     |     |     |-----|
+
+
+P3 starts first at time 0 and runs for 3 units.
+P1 starts next at time 3 and runs for 5 units.
+P4 starts at time 8 and runs for 6 units.
+P2 runs last, starting at time 14 and completing at time 22.
+
+
+Conclusion:
+-----------------------------------------
+Shortest Remaining Time First (SRTF) allows for preemption based on the shortest remaining burst time.
+Processes that have a shorter remaining time are always chosen first, which results in minimizing waiting time for shorter processes.
+However, SRTF can lead to starvation for processes that have longer burst times, as shorter jobs keep preempting them.

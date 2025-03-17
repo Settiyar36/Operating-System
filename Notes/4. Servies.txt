@@ -1,0 +1,105 @@
+OPERATING SYSTEM SERVICES:
+--------------------------------------------------------
+    OS provides different types of services for both user and programs to execute programs in a convinient way. 
+
+SERVICES:
+-------------------
+
+1. Program execution
+2. I/O operation
+3. User interface
+4. File system manipulation
+5. error detection
+6. communication
+7. resource allocation
+8. accounting
+9.protection & security
+
+
+Description	Key Functions
+1. Program Execution:
+    Manages the creation, scheduling, and termination of processes.	
+        - Process creation and termination
+        - Process scheduling (CPU allocation)
+        - Process synchronization and communication
+
+2. I/O Operations:
+	Manages interaction with external devices like keyboards, printers, disks, etc.
+    	- Device drivers
+        - Buffering and caching
+        - I/O scheduling and queuing
+        - Interrupt handling
+
+3. User Interface (UI):
+	Provides interfaces (CLI or GUI) for users to interact with the system.	
+        - Command-line interface (CLI) for text-based interaction
+        - Graphical user interface (GUI) for visual interaction
+        - Window management and event handling
+
+4. File System Manipulation	:
+    Manages the storage, organization, and retrieval of files on storage devices.
+    	- File creation, modification, and deletion
+        - Directory management
+        - File access control and permissions
+
+5. Error Detection:
+	Detects errors in the system and attempts to resolve or report them.
+    	- Hardware error detection (e.g., memory, CPU errors)
+        - Software error handling (e.g., exceptions)
+        - Logging and reporting errors
+
+6. Communication:
+    Manages communication between processes or systems, including inter-process communication (IPC) and networking.	
+        - Inter-process communication (IPC) mechanisms (e.g., message passing, shared memory)
+        - Remote procedure calls (RPC)
+        - Networking protocols and data transfer
+
+7. Resource Allocation:
+    	Allocates resources like CPU time, memory, and I/O devices to various processes and users.
+        	- CPU scheduling
+            - Memory allocation (e.g., paging, segmentation)
+            - Disk and I/O device allocation
+
+8. Accounting:
+	Tracks resource usage for users, processes, or applications, often for billing or auditing purposes.
+    	- Usage tracking (CPU time, memory, disk space)
+        - Billing and quota management
+        - Auditing system usage
+
+9. Protection & Security:
+    Ensures data and resources are protected from unauthorized access and misuse.	- Authentication (user login)
+        - Authorization (access control)
+        - Encryption and decryption
+        - Access control lists (ACLs)
+        - Virus and malware protection
+
+10. Memory Management:
+	Allocates and deallocates memory to processes, and manages virtual memory.
+    	- Memory allocation and deallocation
+        - Virtual memory management (paging, segmentation)
+        - Memory protection
+
+11. Device Management:
+	Manages I/O devices and ensures proper communication between devices and the OS.	
+    - Device drivers
+    - I/O scheduling
+    - Buffering and caching
+    - Device status monitoring
+
+12. Networking Services:
+	Provides the OS with the ability to communicate over networks.	
+        - Network protocol handling (TCP/IP, etc.)
+        - Socket programming for network communication
+        - Routing and firewall management
+
+13. System Performance Monitoring:
+	Monitors system health and performance metrics, optimizing resource usage.
+    	- CPU, memory, disk usage monitoring
+        - Performance metrics reporting
+        - Diagnostics and alerts
+
+14. Power Management:
+	Manages system power consumption, especially in mobile devices.	
+    - Sleep and hibernate modes
+    - Power-saving mechanisms for hardware components
+    - Battery monitoring and management
