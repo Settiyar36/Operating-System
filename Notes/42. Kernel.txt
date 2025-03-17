@@ -1,7 +1,0 @@
-Kernel and Its Key Services
-Kernel: The core part of an operating system, responsible for managing hardware resources and system services.
-Key Services:
-Process Management: Creating, scheduling, and terminating processes.
-Memory Management: Allocating and managing memory, handling page faults.
-Device Management: Controlling hardware devices like printers, storage devices, and network interfaces.
-File System Management: Managing the reading, writing, and organization of files on storage devices.

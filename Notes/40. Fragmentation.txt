@@ -1,7 +1,0 @@
- Fragmentation and its Types
-Definition: Fragmentation refers to the condition when memory or storage is inefficiently used, leading to wasted space.
-Types:
-External Fragmentation: Occurs when free memory is scattered across the system in small chunks, making it difficult to allocate large contiguous blocks.
-Example: In variable-size partitioning, memory may become fragmented over time, leading to inefficient use of RAM.
-Internal Fragmentation: Happens when fixed-size memory blocks are allocated, but processes use less memory than the block size, leaving small, unused portions within the allocated space.
-Example: A 100 MB block is allocated to a process, but it only uses 90 MB. The remaining 10 MB is wasted.
